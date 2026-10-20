@@ -1,0 +1,52 @@
+async (page) => {
+  const results = [];
+  const assert = (name, pass, details = '') => { results.push({ name, pass, details }); console.log(JSON.stringify(results.at(-1))); if (!pass) throw new Error(name + ': ' + details); };
+  const settle = () => page.waitForTimeout(1000);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('http://127.0.0.1:5173');
+  await page.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'playing');
+  await page.screenshot({ path: 'output/playwright/mobile-hero.png' });
+  const bounds = await page.locator('.hero-copy').boundingBox();
+  assert('390px hero safe layout', bounds.x === 24 && bounds.x + bounds.width <= 390 && bounds.y + bounds.height < 844 && bounds.y > 80, JSON.stringify(bounds));
+  assert('Mobile normal page scroll', await page.evaluate(() => document.documentElement.scrollHeight > innerHeight * 4 && document.documentElement.scrollWidth === innerWidth));
+  await page.getByRole('button', { name: 'Menu', exact: false }).click();
+  assert('Mobile navigation opens', await page.getByRole('navigation', { name: 'Mobile navigation', exact: true }).isVisible());
+  await page.keyboard.press('Escape');
+  assert('Mobile menu keyboard escape', !await page.getByRole('navigation', { name: 'Mobile navigation', exact: true }).isVisible());
+  await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
+  await page.waitForFunction(() => [...document.querySelectorAll('.shard')].every(n => Number(getComputedStyle(n).opacity) > 0.99));
+  await page.getByRole('button', { name: 'Oversight — replay fragment animation', exact: true }).dispatchEvent('click');
+  assert('Mobile tap replays shards', await page.locator('.shard').evaluateAll(nodes => nodes.some(n => Number(getComputedStyle(n).opacity) < 1)));
+  await settle(); await page.screenshot({ path: 'output/playwright/mobile-almops.png' });
+  await page.getByRole('tab', { name: '06 Retire', exact: true }).click(); await settle();
+  assert('Mobile lifecycle switch', await page.locator('#stage-panel h3').innerText() === 'Close the lifecycle with care.');
+  await page.locator('#ecosystem').scrollIntoViewIfNeeded(); await settle();
+  await page.getByRole('tab', { name: '03 Technology', exact: true }).click(); await settle();
+  assert('Mobile perspective switch', (await page.locator('#lens-panel h3').innerText()).includes('individual systems'));
+  await page.screenshot({ path: 'output/playwright/mobile-ecosystem.png' });
+  await page.locator('#research').scrollIntoViewIfNeeded(); await settle();
+  await page.getByRole('button', { name: 'Explore the perspective', exact: true }).first().click();
+  assert('Mobile research modal fits', (await page.getByRole('dialog').boundingBox()).width <= 390);
+  await page.screenshot({ path: 'output/playwright/mobile-research-detail.png' });
+  await page.keyboard.press('Escape');
+  await page.locator('#contact').scrollIntoViewIfNeeded(); await settle();
+  await page.screenshot({ path: 'output/playwright/mobile-full.png', fullPage: true });
+  for (const width of [320, 360, 768, 1024, 1920]) {
+    await page.setViewportSize({ width, height: width > 760 ? 900 : 740 }); await settle();
+    assert(`No horizontal overflow at ${width}px`, await page.evaluate(() => document.documentElement.scrollWidth === innerWidth));
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('http://127.0.0.1:5173'); await settle();
+  assert('Reduced motion uses poster without video download', await page.locator('video').evaluate(v => v.paused && !v.currentSrc) && await page.locator('[data-video-status]').getAttribute('data-video-status') === 'reduced');
+  assert('Reduced motion has readable static heading', await page.locator('h1').isVisible() && await page.locator('h1 .blur-text').count() === 0);
+  await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
+  assert('Reduced motion static lifecycle phrase', (await page.locator('.type-line').innerText()).trim() === 'Discover and register.');
+  await page.screenshot({ path: 'output/playwright/mobile-reduced-motion.png' });
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await page.waitForFunction(() => !document.querySelector('video').paused);
+  assert('Reduced motion explicit play opt-in', await page.locator('[data-video-status]').getAttribute('data-video-status') === 'playing');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  return results;
+}

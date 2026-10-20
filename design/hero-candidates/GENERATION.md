@@ -1,0 +1,25 @@
+# DataEco Lab hero candidates
+
+Generated with the built-in image_gen tool on 2026-10-19. Three independent generated stills, not photographs of actual company facilities or products. No image references were supplied. No post-generation image editing was applied. Originals were copied into this directory without altering the generated files.
+
+- A-optical-glass.png: cobalt optical glass; strong refraction and dimensional material.
+- B-porcelain-blue-core.png: white ceramic sculpture surrounding a blue core; stronger sculptural identity.
+- C-research-architecture.png: spacious white architecture and blue glass; more atmospheric and architectural.
+
+All three are pure backgrounds, with no embedded UI or text. Subjects are right-weighted and the lower-left remains available for website typography. These are review candidates, not selected production assets.
+
+## Shared prompt
+
+Create one exquisite cinematic website hero background still for DataEco Lab, a research-led enterprise Agent Lifecycle Management company. This is a pure image asset, not a screenshot or mockup: absolutely no text, logo, UI, typography or watermark. Landscape 16:9 composition. Blue and white palette only, with subtle navy shadows. Main subject concentrated in the RIGHT 50-55 percent, visually balanced but asymmetrical. Preserve a generous quiet low-detail LOWER-LEFT region occupying about 40 percent of the frame for future headline overlay. Sophisticated photographic material realism and beautiful controlled light, visual confidence, substantial physical forms, rich surface detail, believable reflections and shadows. No line art, thin-line patterns, wireframes, circuit traces, network links, dotted spheres, particle clouds, orbital rings, floating globe, robots, holographic interface, purple, green or random cubes. No dividing the frame into panels. No artificial blank rectangular text box. Strong art direction suitable for a premium company homepage.
+
+## A: appended prompt
+
+CONCEPT A: Optical depth. On the right stands one bold sculptural assembly of three thick precision-cut cobalt optical-glass volumes, overlapping at subtly different depths, with broad curved bevels and frosted internal faces. They are grounded on a seamless deep-blue surface, not floating. Close three-quarter product-photography view, impressive scale, tangible glass thickness, crystalline clarity without gemstone jewelry styling. Broad cool white studio illumination passes through their edges and creates a few soft blue caustics confined to the right foreground. An almost-white upper-right atmospheric studio background transitions naturally through reflected blue into quiet rich cobalt and navy at the left and bottom-left. The silhouette must be strong and singular, not an arrangement of generic cubes. Left side remains calm and dark enough for white type. Museum-quality contemporary industrial design photography, restrained, elegant.
+
+## B: appended prompt
+
+CONCEPT B: Porcelain and intelligence. A striking large matte white ceramic architectural sculpture occupies the right half: two broad softly folded solid surfaces enclosing a deeply polished translucent cobalt-blue central slab. Asymmetric sculptural industrial form, not a ring, not a sphere, not a portal, not a pile of cubes. White ceramic has a very fine tactile microtexture; blue core has luminous physical depth and restrained reflections. Low oblique camera, subject close and partially cropped at the far right, dramatic yet gentle side lighting, long soft blue contact shadow falls mainly toward the right. Seamless blue cyclorama backdrop, calm medium-deep cobalt lower-left, cool white upper-right illumination. Beautiful contrast of diffuse porcelain and glossy optical blue, grounded physical construction. Luxury research-brand campaign photograph, simple and memorable. Keep the left forty percent spacious, uncluttered and suitable for headline overlay.
+
+## C: appended prompt
+
+CONCEPT C: Architectural research space. A serene monumental contemporary research pavilion, viewed from a low wide architectural-photography angle. On the right, a single sweeping substantial white plaster canopy and a broad rounded white wall frame several large solid translucent blue glass partitions arranged with architectural intention. These are thick physical surfaces, not lines or wireframes. The space has believable scale and subtle daylight haze; no people, furniture, screens, labels or laboratory props. A shaft of broad soft daylight illuminates the right-side plaster and blue-glass surfaces, creating sculpted blue shadows on a satin floor. Left foreground and lower-left fall into a calm rich navy-blue architectural shadow with generous uninterrupted negative space; keep the top-left quiet for navigation too. Main structure takes only the right half, with a beautifully cropped white mass at the upper-right. Architectural editorial photography, sophisticated blue-white tonal depth, airy but cinematic. Avoid repetitive columns, tunnels, sci-fi corridors, grids and overly elaborate futuristic buildings.

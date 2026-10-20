@@ -1,0 +1,13 @@
+node_modules/
+dist/
+research/original-*.html
+output/
+*.log
+.playwright-cli/
+.cache/
+*.tsbuildinfo
+.playwright/cli.config.json
+.env
+.env.*
+!.env.example
+.vercel/

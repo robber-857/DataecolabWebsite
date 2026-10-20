@@ -1,0 +1,50 @@
+async (page) => {
+  const results = [];
+  const assert = (name, pass, details = '') => { results.push({ name, pass, details }); console.log(JSON.stringify(results.at(-1))); if (!pass) throw new Error(name + ': ' + details); };
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.route('**/media/*.m3u8', route => route.abort());
+  await page.goto('http://127.0.0.1:5173');
+  await page.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'playing');
+  assert('HLS failure falls back to playable MP4', await page.locator('[data-video-source]').getAttribute('data-video-source') === 'mp4' && await page.locator('video').evaluate(v => v.currentSrc.endsWith('.mp4') && v.videoWidth === 1920));
+  await page.route('**/media/*.mp4', route => route.abort());
+  await page.reload();
+  await page.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'error');
+  assert('Total media failure retains poster', await page.locator('.hero-poster').evaluate(img => img.complete && img.naturalWidth > 0) && await page.locator('video').evaluate(v => getComputedStyle(v).opacity === '0'));
+  assert('Failure control is descriptive', await page.getByRole('button', { name: 'Background video unavailable — static image shown', exact: true }).isDisabled());
+  await page.screenshot({ path: 'output/playwright/video-failure-poster.png' });
+  await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
+  await page.waitForTimeout(1200);
+  assert('Page usable when video fails', await page.getByRole('button', { name: 'Oversight — replay fragment animation', exact: true }).isVisible());
+  await page.unroute('**/media/*.m3u8'); await page.unroute('**/media/*.mp4');
+  const blocked = await page.context().newPage();
+  await blocked.addInitScript(() => {
+    const realPlay = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function() {
+      if (!window.__allowVideo) return Promise.reject(new DOMException('Autoplay blocked for test', 'NotAllowedError'));
+      return realPlay.call(this);
+    };
+    document.addEventListener('click', () => { window.__allowVideo = true; }, { once: true });
+  });
+  await blocked.goto('http://127.0.0.1:5173');
+  await blocked.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'blocked');
+  assert('Autoplay denial shows poster', await blocked.locator('video').evaluate(v => getComputedStyle(v).opacity === '0'));
+  await blocked.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await blocked.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'playing');
+  assert('User gesture recovers blocked autoplay', await blocked.locator('video').evaluate(v => !v.paused));
+  await blocked.close();
+  await page.goto('http://127.0.0.1:5173');
+  await page.waitForFunction(() => document.querySelector('[data-video-status]')?.dataset.videoStatus === 'playing');
+  await page.getByRole('button', { name: 'Pause background video', exact: true }).click();
+  await page.locator('#research').scrollIntoViewIfNeeded(); await page.waitForTimeout(800);
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' })); await page.waitForTimeout(800);
+  assert('User pause persists across offscreen and return', await page.locator('video').evaluate(v => v.paused));
+  await page.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await page.waitForFunction(() => !document.querySelector('video').paused);
+  await page.locator('#research').scrollIntoViewIfNeeded(); await page.waitForTimeout(800);
+  assert('Offscreen pauses active playback', await page.locator('video').evaluate(v => v.paused));
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await page.waitForFunction(() => !document.querySelector('video').paused);
+  assert('Returning onscreen resumes when not user-paused', await page.locator('[data-video-status]').getAttribute('data-video-status') === 'playing');
+  return results;
+}
