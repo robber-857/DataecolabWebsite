@@ -9,7 +9,7 @@ import SiteNavigation, { sitePath } from './components/SiteNavigation';
 import ContentPage from './components/ContentPage';
 import pages from './site-map.json';
 
-const lifecyclePhrase = 'Discover and register.';
+const lifecyclePhrases = ['Discover and register.', 'Assess and authorise.', 'Operate and evolve.', 'Retire responsibly.'];
 const TextType = lazy(() => import('./components/react-bits/TextType'));
 const Mark = () => <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 6h10v20H3z" fill="currentColor"/><path d="M16 6c17 0 17 20 0 20V6Z" fill="currentColor"/></svg>;
 
@@ -62,8 +62,13 @@ function ALMOps() {
         <div className="visual-caption"><span>Purpose. Context. Accountability.</span></div>
       </div>
       <div className="lifecycle-workspace">
-        <div className="type-line"><span aria-hidden="true" className="type-dot" />
-          {reduced ? <span>{lifecyclePhrase}</span> : <Suspense fallback={<span>{lifecyclePhrase}</span>}><TextType text={lifecyclePhrase} typingSpeed={44} loop={false} startOnVisible showCursor cursorStyle="bar" cursorBlinkDuration={0} className="lifecycle-type" /></Suspense>}
+        <div className="type-line" aria-label="Lifecycle approach">
+          {lifecyclePhrases.map((phrase, index) => <div className="type-phrase" key={phrase}>
+            <span aria-hidden="true" className="type-dot" />
+            <div className="type-copy"><span aria-hidden="true" className="type-reserve">{phrase}</span>
+              {reduced ? <span className="lifecycle-type">{phrase}</span> : <Suspense fallback={<span className="lifecycle-type">{phrase}</span>}><TextType text={phrase} typingSpeed={30} initialDelay={index * 800} loop={false} startOnVisible showCursor={false} className="lifecycle-type" /></Suspense>}
+            </div>
+          </div>)}
         </div>
         <div className="stage-tabs" role="tablist" aria-label="Agent lifecycle stages">
           {stages.map((item, i) => <button key={item.name} role="tab" id={`stage-tab-${i}`} aria-controls="stage-panel" aria-selected={i === stage} tabIndex={i === stage ? 0 : -1} onClick={() => setStage(i)} onKeyDown={e => tabKey(e, i, stages.length, setStage)}><span>0{i + 1}</span>{item.name}<span className="stage-indicator" aria-hidden="true">{i === stage ? '−' : '+'}</span></button>)}
@@ -140,7 +145,7 @@ function Contact() {
     <motion.img className="contact-image" src="/media/architecture.webp" loading="lazy" alt="" initial={reduced ? false : { opacity: 0.65 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.8 }} /><div className="contact-shade" />
     <div className="contact-content"><div className="section-kicker"><span>04 / Let’s work together</span><span>Start a conversation</span></div>
       <motion.div className="contact-invitation" initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}><h2>A wider perspective.<br />A clearer way forward.</h2><p>Let’s explore what responsible agent lifecycle management<br className="desktop-break" /> could look like in your enterprise.</p><a className="button button-white" href="mailto:info@dataecolab.com">Talk to our team</a></motion.div>
-      <div className="footer-details"><a className="brand" href="/"><Mark /><span>DataEco <span className="brand-light">Lab</span>.</span></a><div><a href="mailto:info@dataecolab.com">info@dataecolab.com</a><p>8 Hadenfeld Ave, Macquarie University<br />NSW 2109, Australia</p></div><div><p>DataEco Lab Pty Ltd<br />ABN 59 664 039 294</p><a href="#top" className="back-top">Back to top</a></div></div>
+      <div className="footer-details"><a className="brand" href="/"><Mark /><span>DataEco <span className="brand-light">Lab</span>.</span></a><div><a href="mailto:info@dataecolab.com">info@dataecolab.com</a><p>8 Hadenfeld Ave, Macquarie University<br />NSW 2109, Australia</p></div><div><p>DataEco Lab Pty Ltd</p><a href="#top" className="back-top">Back to top</a></div></div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} DataEco Lab</span><span>People / Data / Technology</span></div>
     </div>
   </footer>;

@@ -122,6 +122,15 @@ Six full-size desktop frames were also captured around each scene and crossfade 
 - Reviewed screenshots of the desktop hero, desktop hover buttons and mobile research illustration. Production TypeScript/Vite build and all eleven page entries passed. Existing lazy hls.js size advisory remains.
 - Coverage is local Chromium with emulated viewports; hosted deployment and physical Safari/iPhone acceptance remain separate.
 
+## Retained lifecycle copy and company details — 2026-10-20
+
+- Corrected the preceding single-phrase interpretation: all four phrases now type in order and remain visible: “Discover and register.”, “Assess and authorise.”, “Operate and evolve.” and “Retire responsibly.”
+- Desktop uses two columns and two rows; phones up to 600px use four rows. Each phrase reserves its complete text footprint before typing starts, and its animated layer fills that space. No cursor is rendered. Reduced motion displays all four immediately.
+- Removed the ABN from the shared footer, About us and Contact us content.
+- Production TypeScript/Vite build passed. All 33 targeted assertions passed, including sequential appearance, no deletion, completion retention, stable reserved height, actual character bounds, no cursor, no scroll restart, reduced motion and ABN removal.
+- Rechecked the three affected pages at six desktop and five mobile sizes: 18 desktop and 15 mobile page/viewport cases passed; the five mobile search-dialog checks and narrow research-dialog check also passed.
+- Visually inspected final desktop and phone lifecycle screenshots. Local evidence: `lifecycle-retained-checks.json`, `lifecycle-desktop-layout.json`, `lifecycle-mobile-layout.json`, and `lifecycle-retained-{1440,390}.png` under `output/playwright/`.
+
 ## Remaining device and delivery boundaries
 
 - Native HLS on a physical Safari/iPhone device and real low-power/data-saving modes have not been tested.

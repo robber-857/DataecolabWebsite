@@ -49,7 +49,7 @@ export const pageContent: Record<string, PageContent> = {
     chapters: [
       { title: 'Our perspective', text: 'We consider people, data and technology together. Our work connects research-led approaches with questions arising in enterprise practice.', href: '/vision', link: 'Read our vision' },
       { title: 'Meet the management team', text: 'For an introduction to the management team, contact DataEco Lab directly.', href: '/contact-us', link: 'Get in touch' },
-      { title: 'DataEco Lab Pty Ltd', text: 'ABN 59 664 039 294. Based at 8 Hadenfeld Ave, Macquarie University NSW 2109, Australia.', href: 'mailto:info@dataecolab.com', link: 'info@dataecolab.com' },
+      { title: 'DataEco Lab Pty Ltd', text: 'Based at 8 Hadenfeld Ave, Macquarie University NSW 2109, Australia.', href: 'mailto:info@dataecolab.com', link: 'info@dataecolab.com' },
     ],
   },
   '/working-with-us/joining-rd-project': {
@@ -78,7 +78,7 @@ export const pageContent: Record<string, PageContent> = {
     chapters: [
       { title: 'Email our team', text: 'Tell us about your organisation and what you would like to explore.', href: 'mailto:info@dataecolab.com', link: 'info@dataecolab.com' },
       { title: 'Find us', text: '8 Hadenfeld Ave, Macquarie University NSW 2109, Australia.' },
-      { title: 'Company information', text: 'DataEco Lab Pty Ltd · ABN 59 664 039 294.', href: '/about-us', link: 'About DataEco Lab' },
+      { title: 'Company information', text: 'DataEco Lab Pty Ltd.', href: '/about-us', link: 'About DataEco Lab' },
     ],
   },
 };

@@ -18,14 +18,14 @@ async (page) => {
   await page.getByRole('tab', { name: '01 Discover', exact: true }).scrollIntoViewIfNeeded();
   await page.waitForTimeout(1200);
   const visiblePhrases = new Set(), heights = new Set();
-  for(let i=0;i<90;i++) {
-    const text = (await page.locator('.type-line > div > span[aria-hidden="true"]').first().innerText()).replace(/\u200B/g, '');
-    for(const phrase of ['Discover and register.', 'Assess and authorise.', 'Operate and evolve.', 'Retire responsibly.']) if(text === phrase) visiblePhrases.add(phrase);
+  for(let i=0;i<20;i++) {
+    const text = (await page.locator('.lifecycle-type > span[aria-hidden="true"]').allTextContents()).join(' ').replace(/\u200B/g, '');
+    for(const phrase of ['Discover and register.', 'Assess and authorise.', 'Operate and evolve.', 'Retire responsibly.']) if(text.includes(phrase)) visiblePhrases.add(phrase);
     heights.add((await page.locator('.type-line').boundingBox()).height);
     await page.waitForTimeout(250);
   }
   result.visibleTypedPhrases = [...visiblePhrases]; result.typingHeight = [...heights];
-  result.onePhraseRetained = visiblePhrases.size === 1 && visiblePhrases.has('Discover and register.');
-  if(!result.headingSettledWithinTwoSeconds || !result.shineChangesOnEntry || !result.shineStops || !result.onePhraseRetained || heights.size !== 1) throw new Error(JSON.stringify(result));
+  result.allFourPhrasesRetained = visiblePhrases.size === 4;
+  if(!result.headingSettledWithinTwoSeconds || !result.shineChangesOnEntry || !result.shineStops || !result.allFourPhrasesRetained || heights.size !== 1) throw new Error(JSON.stringify(result));
   return result;
 }
