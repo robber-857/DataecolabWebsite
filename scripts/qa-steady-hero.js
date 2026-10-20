@@ -25,7 +25,7 @@ async (page) => {
       await page.evaluate(y => window.scrollTo({top:y, behavior:'instant'}), y);
       check('No hero transform at ' + width + '/' + y, await page.locator('.hero-media').evaluate(node => getComputedStyle(node).transform === 'none'));
     }
-    await page.getByRole('button', {name:'Pause background video',exact:true}).click();
+    await page.getByRole('button', {name:'Pause background video',exact:true}).focus(); await page.keyboard.press('Enter');
     check('Pause still works at ' + width, await page.locator('video').evaluate(video => video.paused));
     check('Footer has no duplicate menu at ' + width, await page.locator('footer nav').count() === 0);
     await page.locator('footer').scrollIntoViewIfNeeded();

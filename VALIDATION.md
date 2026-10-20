@@ -109,6 +109,19 @@ Six full-size desktop frames were also captured around each scene and crossfade 
 - Reproduction: `scripts/qa-desktop-pages.js` and `scripts/qa-desktop-interactions.js` are Playwright CLI `run-code` functions. Local reports: `output/playwright/desktop-pages-audit.json`, `desktop-interactions-checks.json`, and `desktop-audit-*.png`.
 - This is local Chromium production-preview coverage. GitHub source delivery is separate from hosted-site deployment verification.
 
+## Visual refinements — 2026-10-20
+
+- Removed decorative diagonal/down/up arrows from CTAs, navigation rows, research links, ecosystem tabs and the Oversight accent. Functional menu, dropdown, search and disclosure controls remain.
+- Removed the persistent film overlay. The background video control remains available to assistive technology and becomes visible only on keyboard focus.
+- Text Type now types “Discover and register.” once and keeps it. Scrolling away and back does not restart or erase the phrase. This supersedes the earlier four-phrase cycling/pause-control behavior.
+- Removed the old-company-material link from both research dialogs. Replaced the dated ecosystem matrix image with a generated conceptual People / Data / Technology illustration, optimized to a 189,950-byte WebP. Its prompt and source are in `design/research/`.
+- Converted shared text CTAs to rounded pale-blue buttons with cobalt hover/focus feedback and no underline/bottom border.
+- All 66 desktop page/viewport combinations and 55 mobile page/viewport combinations passed again. Five mobile search dialogs and the narrow research dialog also passed. Evidence: `refinement-desktop.json` and `refinement-mobile.json` under `output/playwright/`.
+- All 22 targeted assertions passed at 1440px and 390px, including non-decreasing typed text, retained completion, no scroll restart, hidden idle playback control, new image decoding, removed external source links, hover color changes, no CTA underline, no page overflow, and reduced-motion behavior. Evidence: `scripts/qa-visual-refinements.js` and `refinement-details.json`.
+- Nine video assertions passed: HLS-to-MP4 fallback, total-failure poster, descriptive unavailable state, usable page on failure, blocked-autoplay poster, keyboard recovery, persistent user pause, offscreen pause and onscreen resume. The autoplay-denial test disables native autoplay as well as rejecting `play()`; overriding the method alone does not simulate browser policy. Evidence: `refinement-video.json`.
+- Reviewed screenshots of the desktop hero, desktop hover buttons and mobile research illustration. Production TypeScript/Vite build and all eleven page entries passed. Existing lazy hls.js size advisory remains.
+- Coverage is local Chromium with emulated viewports; hosted deployment and physical Safari/iPhone acceptance remain separate.
+
 ## Remaining device and delivery boundaries
 
 - Native HLS on a physical Safari/iPhone device and real low-power/data-saving modes have not been tested.

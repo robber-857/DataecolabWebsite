@@ -28,7 +28,7 @@ Production preview: http://127.0.0.1:4173. Deploy the contents of `dist/` to a s
 - Full-bleed hero with a locally hosted 8-second, 1920×1080 H.264 HLS loop, MP4 fallback and WebP poster. Glass navigation, bottom-left heading and two working section links.
 - Six selectable lifecycle stages. The descriptions are introductory lifecycle guidance, not a released-feature checklist. The page explicitly identifies ALMOps as in development.
 - People / Data / Technology tabs with distinct imagery and text. Keyboard arrows, Home and End work for both tab groups.
-- Two editorial research perspectives, accessible native dialogs, original-source links and expandable original illustrations. No papers, author metadata, clients or commercial results have been invented.
+- Two editorial research perspectives, accessible native dialogs, expandable supporting illustrations, including a generated enterprise ecosystem visual. No papers, author metadata, clients or commercial results have been invented.
 - Real published company address, ABN and `mailto:info@dataecolab.com`. The contact action opens the visitor's email client; no message has been sent or backend form delivery implied.
 - Natural scrolling with Motion reveal, crossfade and image-mask transitions. The hero uses a fixed camera and no scroll-linked scale or translation. No wheel interception, scroll snapping or forced section advance.
 
@@ -38,7 +38,7 @@ Blur Text, Shiny Text and Text Type were downloaded as source from the official 
 
 - Blur Text: word-based upward reveal, 5px blur, 12px movement, short stagger. The root was changed from a paragraph to a span so it can sit inside a semantic `h1`.
 - Shiny Text: one sweep on first viewport entry. No continuous shine.
-- Text Type: the four requested phrases, fixed 56px layout space, explicit pause control, static content with reduced motion. Loaded on demand when ALMOps comes into view. Its official source uses GSAP; site interactions use Motion.
+- Text Type: a single phrase typed once and retained, fixed 56px layout space, static content with reduced motion. The component starts typing when visible and does not restart on scrolling. Its official source uses GSAP; site interactions use Motion.
 - **Shatter Type: the licensed React Bits Pro implementation is not included.** The public documentation was read, but no Pro source or license was available. `src/components/ShardWord.tsx` is an original substitute: 54 polygon-clipped glyph fragments independently translate and rotate into “Oversight”, with a short replay on hover, click/tap or keyboard activation. It is not a fade mislabeled as Pro Shatter Type. To require exact Pro parity, provide the legitimately licensed source for integration.
 
 Reduced motion switches the headline and typing line to static text, removes section transforms and stops background autoplay. A visitor can explicitly opt into playing the video. Screen-reader content stays intact independently of the decorative animations.
@@ -55,7 +55,7 @@ npm run media:build
 
 This regenerates the three optimized WebP images, `public/media/hero.mp4`, HLS manifest and four two-second segments. Shots use a locked camera with crossfades only: no zoom/pan stepping. The first/last composition matches the poster to avoid a framing jump on load or repeat. It requires no external media host at runtime. The MP4 is approximately 2.6 MB. The poster is approximately 83 KB.
 
-The background player supports native HLS where available, lazy hls.js elsewhere, fallback on fatal HLS errors, MP4 failure poster, autoplay denial, document visibility, IntersectionObserver offscreen pause and persistent user pause. Slow source loading has a bounded timeout. A large lazy-loaded hls.js chunk produces a Vite size advisory; it is separate from the initial page bundle.
+The background player supports native HLS where available, lazy hls.js elsewhere, fallback on fatal HLS errors, MP4 failure poster, autoplay denial, document visibility, IntersectionObserver offscreen pause and persistent keyboard user pause. The playback control is visually hidden except when focused by keyboard; there is no persistent film-control overlay. Slow source loading has a bounded timeout. A large lazy-loaded hls.js chunk produces a Vite size advisory; it is separate from the initial page bundle.
 
 ## Main files
 

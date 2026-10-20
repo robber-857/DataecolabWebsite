@@ -32,7 +32,7 @@ export const pageContent: Record<string, PageContent> = {
     image: 'glass', lead: 'A place for the ideas and methods behind our enterprise perspective.', status: 'Resource Centre · Under construction',
     chapters: [
       { title: 'Research & perspectives', text: 'Read the editorial introductions to agentic practice and enterprise ecosystems on our homepage.', href: '/#research', link: 'Read our perspectives' },
-      { title: 'Original company materials', text: 'Explore the source material behind our lifecycle and ecosystem approach. Original illustrations can be expanded in the homepage research details.', href: '/#research', link: 'Explore the original illustrations' },
+      { title: 'Research perspectives', text: 'Explore the thinking behind our lifecycle and ecosystem approach. Supporting illustrations can be expanded in the homepage research details.', href: '/#research', link: 'Explore the research perspectives' },
       { title: 'Looking for a specific resource?', text: 'Contact the team with your topic or research question. The wider resource collection is still being prepared.', href: '/contact-us', link: 'Ask our team' },
     ],
   },

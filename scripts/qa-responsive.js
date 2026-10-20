@@ -44,7 +44,7 @@ async (page) => {
   assert('Reduced motion static lifecycle phrase', (await page.locator('.type-line').innerText()).trim() === 'Discover and register.');
   await page.screenshot({ path: 'output/playwright/mobile-reduced-motion.png' });
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await page.getByRole('button', { name: 'Play background video', exact: true }).focus(); await page.keyboard.press('Enter');
   await page.waitForFunction(() => !document.querySelector('video').paused);
   assert('Reduced motion explicit play opt-in', await page.locator('[data-video-status]').getAttribute('data-video-status') === 'playing');
   await page.emulateMedia({ reducedMotion: 'no-preference' });

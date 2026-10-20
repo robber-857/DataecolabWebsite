@@ -25,7 +25,7 @@ async (page) => {
     await page.waitForTimeout(250);
   }
   result.visibleTypedPhrases = [...visiblePhrases]; result.typingHeight = [...heights];
-  result.allFourVisuallyTyped = visiblePhrases.size === 4;
-  if(!result.headingSettledWithinTwoSeconds || !result.shineChangesOnEntry || !result.shineStops || !result.allFourVisuallyTyped || heights.size !== 1) throw new Error(JSON.stringify(result));
+  result.onePhraseRetained = visiblePhrases.size === 1 && visiblePhrases.has('Discover and register.');
+  if(!result.headingSettledWithinTwoSeconds || !result.shineChangesOnEntry || !result.shineStops || !result.onePhraseRetained || heights.size !== 1) throw new Error(JSON.stringify(result));
   return result;
 }

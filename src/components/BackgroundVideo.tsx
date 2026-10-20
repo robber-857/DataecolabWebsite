@@ -96,11 +96,12 @@ export default function BackgroundVideo({ manifest, fallback, poster }: Props) {
       aria-hidden="true" tabIndex={-1} className={staticPoster ? 'video-hidden' : ''}
       onPlaying={() => setStatus('playing')} onPause={() => setStatus(s => s === 'playing' ? 'paused' : s)} />
     <div className="hero-shade" />
+    {/* Kept for keyboard and assistive technology; no persistent visual overlay. */}
     <button className="video-control" onClick={toggle} disabled={status === 'error'}
       aria-label={status === 'playing' ? 'Pause background video' : status === 'error' ? 'Background video unavailable — static image shown' : 'Play background video'}>
       <span aria-hidden="true">{status === 'playing' ? 'Ⅱ' : '▷'}</span>
-      <span>{status === 'playing' ? 'Pause film' : status === 'error' ? 'Still image' : 'Play film'}</span>
+      <span>{status === 'playing' ? 'Pause background video' : status === 'error' ? 'Still image' : 'Play background video'}</span>
     </button>
-    <span className="sr-only" role="status">{status === 'error' ? 'Video unavailable. A still image is displayed.' : status === 'blocked' ? 'Autoplay was blocked. Select Play film to start.' : ''}</span>
+    <span className="sr-only" role="status">{status === 'error' ? 'Video unavailable. A still image is displayed.' : status === 'blocked' ? 'Autoplay was blocked. A still image is displayed.' : ''}</span>
   </div>;
 }

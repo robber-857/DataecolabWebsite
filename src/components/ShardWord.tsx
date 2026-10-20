@@ -34,6 +34,5 @@ export default function ShardWord() {
         </motion.span>)}
       </span>)}
     </span>
-    <span className="shard-plus" aria-hidden="true">↗</span>
   </button>;
 }

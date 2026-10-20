@@ -11,7 +11,7 @@ async (page) => {
   const frames = [];
   for (let i = 0; i < 20; i++) { frames.push(await page.locator('video').evaluate(v => v.currentTime)); await page.waitForTimeout(500); }
   assert('Video advances and loops', frames.some((n, i) => i > 0 && n < frames[i - 1]) && new Set(frames.map(n => n.toFixed(1))).size > 15, JSON.stringify(frames));
-  await page.getByRole('button', { name: 'Pause background video', exact: true }).click();
+  await page.getByRole('button', { name: 'Pause background video', exact: true }).focus(); await page.keyboard.press('Enter');
   const paused = await page.locator('video').evaluate(v => v.currentTime);
   await page.waitForTimeout(500);
   assert('User pause holds', await page.locator('video').evaluate((v, time) => v.paused && Math.abs(v.currentTime - time) < 0.1, paused) && await status() === 'paused', String(paused));
@@ -20,7 +20,7 @@ async (page) => {
     await page.waitForTimeout(200);
     await page.screenshot({ path: `output/playwright/desktop-film-${time}.png` });
   }
-  await page.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await page.getByRole('button', { name: 'Play background video', exact: true }).focus(); await page.keyboard.press('Enter');
   await page.waitForFunction(() => !document.querySelector('video').paused);
   await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
   await settle();

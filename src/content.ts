@@ -30,6 +30,6 @@ export const articles = [
       'An enterprise data ecosystem encompasses people, data, systems and the activities through which they work together. Looking at one element alone can obscure its wider context.',
       'DataEco Lab’s ecosystem-based approach considers enterprise data practice as an evolving operational system. It uses modelling to support a shared understanding across disciplines.',
       'For a research or enterprise conversation, the starting point is a practical question: what changes when we examine the organisation as a whole? This perspective provides context for discussing ownership, dependencies and the consequences of change.',
-    ], source: 'https://www.dataecolab.com/', image: '/images/original-home-4.png', imageCaption: 'Image retained from the original DataEco Lab website',
+    ], source: 'https://www.dataecolab.com/', image: '/images/enterprise-ecosystem.webp', imageCaption: 'People, data and technology — a shared enterprise environment',
   },
 ];
