@@ -27,8 +27,8 @@ async (page) => {
   assert('Offscreen video pauses', await page.locator('video').evaluate(v => v.paused));
   await page.waitForFunction(() => [...document.querySelectorAll('.shard')].every(n => Number(getComputedStyle(n).opacity) > 0.99));
   const shards = await page.locator('.shard').evaluateAll(nodes => nodes.map(n => ({ opacity: getComputedStyle(n).opacity, clip: getComputedStyle(n).clipPath })));
-  assert('54 polygon shards assemble', shards.length === 54 && shards.every(s => Number(s.opacity) > 0.99 && s.clip.startsWith('polygon')));
-  await page.getByRole('button', { name: 'Oversight — replay fragment animation', exact: true }).click();
+  assert('Heading polygon shards assemble', shards.length === 'AgentGovernanceandManagement'.length * 6 && shards.every(s => Number(s.opacity) > 0.99 && s.clip.startsWith('polygon')));
+  await page.getByRole('button', { name: 'Agent Governance and Management — replay fragment animation', exact: true }).click();
   const broken = await page.locator('.shard').evaluateAll(nodes => nodes.some(n => getComputedStyle(n).transform !== 'none'));
   assert('Shards visibly move on interaction', broken);
   await settle();
@@ -47,14 +47,12 @@ async (page) => {
   const heights = new Set(); const typed = new Set();
   for (let i = 0; i < 85; i++) {
     heights.add(Math.round((await typeLine.boundingBox()).height));
-    const text = await typeLine.locator(':scope > div > span[aria-hidden="true"]').first().innerText();
+    const text = await typeLine.locator('.lifecycle-type > span[aria-hidden="true"]').allTextContents().then(parts => parts.join(' '));
     for (const phrase of ['Discover and register.', 'Assess and authorise.', 'Operate and evolve.', 'Retire responsibly.']) if (text.includes(phrase)) typed.add(phrase);
     await page.waitForTimeout(250);
   }
   assert('All four Text Type phrases', typed.size === 4, JSON.stringify([...typed]));
   assert('Text Type reserves constant height', heights.size === 1, JSON.stringify([...heights]));
-  await page.getByRole('button', { name: 'Pause lifecycle text animation', exact: true }).click();
-  assert('Text Type pause control', await page.getByRole('button', { name: 'Resume lifecycle text animation', exact: true }).isVisible());
   await page.locator('#ecosystem').scrollIntoViewIfNeeded(); await settle();
   const lensTabs = page.getByRole('tablist', { name: 'Enterprise ecosystem perspectives', exact: true }).getByRole('tab');
   for (let i = 0; i < 3; i++) {

@@ -15,7 +15,7 @@ async (page) => {
   assert('Mobile menu keyboard escape', !await page.getByRole('navigation', { name: 'Mobile navigation', exact: true }).isVisible());
   await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
   await page.waitForFunction(() => [...document.querySelectorAll('.shard')].every(n => Number(getComputedStyle(n).opacity) > 0.99));
-  await page.getByRole('button', { name: 'Oversight — replay fragment animation', exact: true }).dispatchEvent('click');
+  await page.getByRole('button', { name: 'Agent Governance and Management — replay fragment animation', exact: true }).dispatchEvent('click');
   assert('Mobile tap replays shards', await page.locator('.shard').evaluateAll(nodes => nodes.some(n => Number(getComputedStyle(n).opacity) < 1)));
   await settle(); await page.screenshot({ path: 'output/playwright/mobile-almops.png' });
   await page.getByRole('tab', { name: '06 Retire', exact: true }).click(); await settle();

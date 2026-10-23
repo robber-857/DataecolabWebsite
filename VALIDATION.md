@@ -131,6 +131,15 @@ Six full-size desktop frames were also captured around each scene and crossfade 
 - Rechecked the three affected pages at six desktop and five mobile sizes: 18 desktop and 15 mobile page/viewport cases passed; the five mobile search-dialog checks and narrow research-dialog check also passed.
 - Visually inspected final desktop and phone lifecycle screenshots. Local evidence: `lifecycle-retained-checks.json`, `lifecycle-desktop-layout.json`, `lifecycle-mobile-layout.json`, and `lifecycle-retained-{1440,390}.png` under `output/playwright/`.
 
+## Requested website copy and ALMOps image — 2026-10-23
+
+- Applied the supplied revision list to Home, Vision, Services and Tools/Platforms. Preserved the requested wording “Agent evolve.”. The shared contact invitation uses the new enterprise agentic practice headline while retaining “A clearer way forward.” as supporting text.
+- Replaced the animated Oversight label with “Agent Governance and Management”, with responsive word-safe wrapping. A solid glyph appears after the fragment animation settles to remove visible polygon seams; keyboard replay and reduced-motion support remain.
+- Placed the existing company ALM platform concept image above chapter 01 ALMOps, with a full-size link and the existing development/verification distinction. No new product metrics or integration claims were introduced.
+- All 66 desktop and 55 mobile page/viewport checks passed. The mobile search and narrow research-dialog checks also passed. No application errors or layout failures were reported in the desktop audit.
+- All 36 targeted checks passed at 1440px, 390px and 320px: requested copy, glyph bounds, keyboard replay, image position/loading, full-size image opening and horizontal overflow. Reviewed desktop/mobile screenshots of the new section heading, contact invitation and Tools/Platforms title.
+- Production TypeScript/Vite build passed; the existing lazy hls.js chunk advisory remains. Reports and screenshots are in `output/playwright/oct23-*`.
+
 ## Remaining device and delivery boundaries
 
 - Native HLS on a physical Safari/iPhone device and real low-power/data-saving modes have not been tested.

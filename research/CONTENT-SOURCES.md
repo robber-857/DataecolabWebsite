@@ -9,7 +9,7 @@ Reviewed 2026-10-19 (Australia/Sydney).
 3. https://www.dataecolab.com/toolsplatforms — Agent Lifecycle Management Operating System (ALMOps); the page introduces technologies as being developed. The new site preserves this development status.
 4. https://www.dataecolab.com/contact-us — published contact destination, checked alongside the company footer.
 
-Original image retrieval URLs and archived assets are documented in `ASSETS.md`. `original-home-4.png` and `original-platform-4.png` remain accessible within research details. The ALM diagram contains numerical, compliance and integration statements that this project has not verified; it is shown only as archived concept material with an adjacent limitation notice, not as a current capability statement.
+Original image retrieval URLs and archived assets are documented in `ASSETS.md`. `original-platform-4.png` remains accessible within research details and, as requested on 2026-10-23, above the ALMOps chapter on Tools/Platforms. The old matrix image has been replaced by `enterprise-ecosystem.webp`. The ALM diagram contains numerical, compliance and integration statements that this project has not verified; it is shown as concept material with an adjacent limitation notice, not as a current capability statement.
 
 ## Editorial decisions
 
@@ -17,7 +17,7 @@ Original image retrieval URLs and archived assets are documented in `ASSETS.md`.
 - Discover / Assess / Approve / Operate / Evolve / Retire form an introductory lifecycle narrative. Descriptions express questions and practices rather than claiming implemented software functionality.
 - Research entries are clearly presented as editorial perspectives derived from company material. They are not asserted to be papers, publications or peer-reviewed findings. No authors, dates, citations, client names, statistics or integrations have been invented.
 - Data Product, DataPro, productisation, marketplaces and data trading marketing are excluded from new page copy.
-- The Australian company name, ABN 59 664 039 294, address and email match the original site.
+- The Australian company name, address and email match the original site. The ABN is intentionally omitted from the public pages at the user’s request.
 - Generated architectural imagery is conceptual. The site does not identify it as a real company facility.
 
 ## Original navigation restored

@@ -1,9 +1,9 @@
-type Chapter = { title: string; text: string; href?: string; link?: string };
+type Chapter = { title: string; text: string; href?: string; link?: string; image?: { src: string; alt: string; caption: string } };
 type PageContent = { image: string; lead: string; status?: string; chapters: Chapter[] };
 
 export const pageContent: Record<string, PageContent> = {
   '/vision': {
-    image: 'architecture', lead: 'Intelligent enterprise starts with a connected view of agents, people, data and technology.',
+    image: 'architecture', lead: 'Agentic enterprise starts with a connected view of agents, people, data and technology.',
     chapters: [
       { title: 'Enterprise Agent Lifecycle Management', text: 'Developing approaches for the responsible management of agents throughout their lifecycle, with an understanding of their enterprise context.', href: '/toolsplatforms', link: 'Explore ALMOps' },
       { title: 'An ecosystem perspective', text: 'Helping organisations understand and manage enterprise data practice as an evolving ecosystem, with capability and confidence.', href: '/#ecosystem', link: 'Explore the ecosystem perspective' },
@@ -11,7 +11,7 @@ export const pageContent: Record<string, PageContent> = {
     ],
   },
   '/services': {
-    image: 'porcelain', lead: 'Consulting and training informed by Agent Lifecycle Management and an ecosystem-based approach.',
+    image: 'porcelain', lead: 'Consulting and training informed by an ecosystem-based agent lifecycle management approach.',
     chapters: [
       { title: 'Agent lifecycle & governance practice', text: 'Examine how data, IT and AI governance engage with agent development, authorisation and change. Discuss the organisational practice surrounding your agents.', href: '/#almops', link: 'Explore the lifecycle' },
       { title: 'Enterprise ecosystem management', text: 'Use modelling to understand enterprise data practice, its complexity and the relationships between people, data and technology.' },
@@ -23,7 +23,7 @@ export const pageContent: Record<string, PageContent> = {
   '/toolsplatforms': {
     image: 'glass', lead: 'Tools grounded in methods for understanding and managing the enterprise.', status: 'Emerging technologies · In development',
     chapters: [
-      { title: 'ALMOps', text: 'Agent Lifecycle Management Operating System: a methodology-based platform being developed to support enterprise agentic practice and the management of agent fleets across an enterprise ecosystem.', href: '/#almops', link: 'Explore the lifecycle approach' },
+      { title: 'ALMOps', image: { src: '/images/original-platform-4.png', alt: 'Enterprise Agent Lifecycle Management platform concept overview', caption: 'ALMOps concept overview · In development. Metrics and integrations in this concept artwork are not verified product capabilities.' }, text: 'Agent Lifecycle Management Operating System: a methodology-based platform being developed to support enterprise agentic practice and the management of agent fleets across an enterprise ecosystem.', href: '/#almops', link: 'Explore the lifecycle approach' },
       { title: 'DPMOps / EDE-360', text: 'Data Practice Management Operating System: an interrelated suite of tools addressing enterprise data practice, architecture, knowledge management and change. EDE-360 provides an ecosystem perspective.', href: '/#ecosystem', link: 'Explore the ecosystem approach' },
       { title: 'Discuss the scope with our team', text: 'For current development scope, availability and suitability for your organisation, please contact us.', href: '/contact-us', link: 'Talk to our team' },
     ],

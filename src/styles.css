@@ -65,10 +65,12 @@ h1 { font-size: clamp(55px, 5.2vw, 88px); line-height: 1.045; letter-spacing: -.
 .alm-section { position: relative; z-index: 2; background: white; padding-top: 54px; padding-bottom: 90px; border-radius: 0; }
 .section-kicker { display: flex; align-items: center; justify-content: space-between; gap: 20px; text-transform: uppercase; font-size: 10px; font-weight: 550; letter-spacing: .14em; }
 .section-kicker > span:last-child { color: #66758b; }
-.oversight-intro { display: flex; align-items: center; justify-content: space-between; padding: 37px 0 27px; border-bottom: 1px solid #dbe3ee; }
+.oversight-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 37px 0 27px; border-bottom: 1px solid #dbe3ee; }
 .oversight-intro > p { font-size: 14px; line-height: 1.65; color: #617087; }
-.shard-word { position: relative; color: #235bf5; display: inline-flex; align-items: flex-start; gap: 20px; font-size: clamp(64px, 8.3vw, 132px); letter-spacing: -.065em; font-weight: 450; line-height: 1.2; border: 0; background: transparent; padding: 0; }
-.shard-letters { display: inline-flex; }
+.shard-word { position: relative; color: #235bf5; display: inline-flex; align-items: flex-start; gap: 20px; max-width: 100%; text-align: left; font-size: clamp(40px, 5.6vw, 86px); letter-spacing: -.055em; font-weight: 450; line-height: 1.2; border: 0; background: transparent; padding: 0; }
+.shard-letters { display: inline-flex; flex-direction: column; }
+.shard-line { display: flex; flex-wrap: wrap; column-gap: .24em; }
+.shard-token { display: inline-flex; }
 .shard-letter { display: inline-block; position: relative; }
 .shard-size { opacity: 0; }
 .shard { position: absolute; inset: 0; }
@@ -161,7 +163,8 @@ h2 { font-weight: 450; font-size: clamp(36px, 3.4vw, 58px); line-height: 1.12; l
 .contact-content { position: relative; }
 .contact-content .section-kicker > span:last-child { color: #c5d9f9; }
 .contact-invitation { padding: 70px 0 80px; }
-.contact-invitation h2 { font-size: clamp(40px, 4.2vw, 66px); }
+.contact-invitation h2 { max-width: 1000px; font-size: clamp(40px, 4.2vw, 66px); }
+.contact-followup { display: block; margin-top: .5em; font-size: .58em; letter-spacing: -.025em; color: #d7e4f9; }
 .contact-invitation p { font-size: 15px; line-height: 1.75; margin-top: 23px; color: #d7e4f9; }
 .button-white { background: #fff; color: #15418e; margin-top: 28px; }
 .button-white:hover { background: #e9f1ff; }
@@ -203,7 +206,8 @@ h2 { font-weight: 450; font-size: clamp(36px, 3.4vw, 58px); line-height: 1.12; l
   .section-kicker { font-size: 9px; letter-spacing: .1em; }
   .section-kicker > span:last-child { display: none; }
   .oversight-intro { padding-top: 35px; padding-bottom: 27px; }
-  .shard-word { font-size: clamp(54px, 12.8vw, 88px); gap: 10px; }
+  .shard-word { font-size: clamp(30px, 8.4vw, 56px); gap: 10px; }
+  .oversight-intro { flex-direction: column; align-items: flex-start; gap: 16px; }
   .oversight-intro > p { font-size: 10px; }
   .section-heading { grid-template-columns: 1fr; gap: 24px; padding: 36px 0 30px; }
   h2 { font-size: clamp(33px, 7.8vw, 47px); }
@@ -257,7 +261,7 @@ h2 { font-weight: 450; font-size: clamp(36px, 3.4vw, 58px); line-height: 1.12; l
   .hero-copy { left: 20px; right: 20px; } h1 { font-size: 36px; } .hero-eyebrow { font-size: 8px; }
   .hero-actions { gap: 9px; } .button { padding: 12px 13px; gap: 16px; font-size: 11px; }
   .oversight-intro > p { display: none; } .lens-tabs button { gap: 5px; font-size: 12px; }
-  .shard-word { font-size: 52px; } .type-line { font-size: 13px; }
+  .shard-word { font-size: 30px; } .type-line { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -298,6 +302,8 @@ h2 { font-weight: 450; font-size: clamp(36px, 3.4vw, 58px); line-height: 1.12; l
 .breadcrumbs a:hover { color: #235bf5; }
 .page-intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12%; align-items: end; padding-top: 55px; }
 .page-intro h1 { font-size: clamp(44px, 4.3vw, 72px); line-height: 1.07; color: #10284f; letter-spacing: -.05em; margin-top: 20px; }
+.page-intro-wide { grid-template-columns: 1.6fr 1fr; gap: 8%; }
+.page-intro-wide h1 { font-size: clamp(40px, 3.7vw, 64px); }
 .page-intro .eyebrow { color: #235bf5; }
 .page-lead > p { font-size: 17px; color: #596e8b; line-height: 1.8; max-width: 420px; }
 .page-status { display: inline-block; font-size: 11px; line-height: 1.7; color: #254d8b; border-left: 2px solid #83a9ed; padding-left: 12px; margin-top: 22px; }
@@ -315,7 +321,13 @@ h2 { font-weight: 450; font-size: clamp(36px, 3.4vw, 58px); line-height: 1.12; l
 .page-chapter h2 { font-size: clamp(27px, 2.5vw, 40px); line-height: 1.2; }
 .page-chapter p { font-size: 16px; line-height: 1.85; color: #5b6f8c; margin-top: 18px; max-width: 610px; }
 .page-chapter .text-link { margin-top: 18px; }
-.page-chapter:last-child { margin-bottom: 0; }
+.page-chapters > div > div:last-child .page-chapter { margin-bottom: 0; }
+.chapter-visual { margin: 0 0 32px; }
+.chapter-visual > a { display: block; border-radius: 8px; overflow: hidden; border: 1px solid #dbe3ee; }
+.chapter-visual img { width: 100%; height: auto; }
+.chapter-visual figcaption { margin-top: 12px; color: #5b6f8c; font-size: 11px; line-height: 1.65; }
+.chapter-visual figcaption a { display: block; width: fit-content; margin-top: 6px; padding: 6px 0; color: #235bf5; }
+.chapter-visual figcaption a:hover { color: #10284f; }
 .collaboration-next { padding-bottom: 65px; display: flex; flex-direction: column; }
 .collaboration-next a { display: flex; justify-content: space-between; padding: 24px 0; border-top: 1px solid #dbe3ee; font-size: 24px; letter-spacing: -.02em; }
 .not-found { padding-top: 80px; padding-bottom: 100px; }

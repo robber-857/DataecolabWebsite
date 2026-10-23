@@ -16,7 +16,7 @@ async (page) => {
   await page.screenshot({ path: 'output/playwright/video-failure-poster.png' });
   await page.getByRole('link', { name: 'Explore ALMOps', exact: true }).click();
   await page.waitForTimeout(1200);
-  assert('Page usable when video fails', await page.getByRole('button', { name: 'Oversight — replay fragment animation', exact: true }).isVisible());
+  assert('Page usable when video fails', await page.getByRole('button', { name: 'Agent Governance and Management — replay fragment animation', exact: true }).isVisible());
   await page.unroute('**/media/*.m3u8'); await page.unroute('**/media/*.mp4');
   const blocked = await page.context().newPage();
   await blocked.addInitScript(() => {

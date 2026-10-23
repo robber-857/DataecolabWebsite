@@ -56,7 +56,7 @@ function ALMOps() {
   return <section id="almops" ref={ref} className="alm-section section-pad">
     <div className="section-kicker"><span>01 / ALMOps</span><span>A lifecycle perspective</span></div>
     <div className="oversight-intro"><ShardWord /><p>For every agent.<br />At every stage.</p></div>
-    <div className="section-heading"><h2>Intelligence evolves.<br /><span className="muted-heading">Oversight should, too.</span></h2><div className="section-intro"><p>A methodology-led approach to Agent Lifecycle Management, connecting enterprise governance with the everyday practice of managing agents.</p><span className="development-note"><span />ALMOps · In development</span></div></div>
+    <div className="section-heading"><h2>Agent evolve.<br /><span className="muted-heading">Management capability should, too.</span></h2><div className="section-intro"><p>A methodology-led approach to Agent Lifecycle Management, connecting enterprise governance with the everyday practice of managing agents.</p><span className="development-note"><span />ALMOps · In development</span></div></div>
     <div className="lifecycle-layout">
       <div className="lifecycle-visual"><img src="/media/porcelain.webp" alt="Sculptural white surfaces surrounding a substantial cobalt glass core" loading="lazy" width="1440" height="810" />
         <div className="visual-caption"><span>Purpose. Context. Accountability.</span></div>
@@ -144,7 +144,7 @@ function Contact() {
   return <footer id="contact" className="contact-section section-pad">
     <motion.img className="contact-image" src="/media/architecture.webp" loading="lazy" alt="" initial={reduced ? false : { opacity: 0.65 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.8 }} /><div className="contact-shade" />
     <div className="contact-content"><div className="section-kicker"><span>04 / Let’s work together</span><span>Start a conversation</span></div>
-      <motion.div className="contact-invitation" initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}><h2>A wider perspective.<br />A clearer way forward.</h2><p>Let’s explore what responsible agent lifecycle management<br className="desktop-break" /> could look like in your enterprise.</p><a className="button button-white" href="mailto:info@dataecolab.com">Talk to our team</a></motion.div>
+      <motion.div className="contact-invitation" initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}><h2>Building enterprise agentic practice with ALM capability.<span className="contact-followup">A clearer way forward.</span></h2><p>Let’s explore what responsible agent lifecycle management<br className="desktop-break" /> could look like in your enterprise.</p><a className="button button-white" href="mailto:info@dataecolab.com">Talk to our team</a></motion.div>
       <div className="footer-details"><a className="brand" href="/"><Mark /><span>DataEco <span className="brand-light">Lab</span>.</span></a><div><a href="mailto:info@dataecolab.com">info@dataecolab.com</a><p>8 Hadenfeld Ave, Macquarie University<br />NSW 2109, Australia</p></div><div><p>DataEco Lab Pty Ltd</p><a href="#top" className="back-top">Back to top</a></div></div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} DataEco Lab</span><span>People / Data / Technology</span></div>
     </div>
