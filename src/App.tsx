@@ -56,7 +56,7 @@ function ALMOps() {
   return <section id="almops" ref={ref} className="alm-section section-pad">
     <div className="section-kicker"><span>01 / ALMOps</span><span>A lifecycle perspective</span></div>
     <div className="oversight-intro"><ShardWord /><p>For every agent.<br />At every stage.</p></div>
-    <div className="section-heading"><h2>Agent evolve.<br /><span className="muted-heading">Management capability should, too.</span></h2><div className="section-intro"><p>A methodology-led approach to Agent Lifecycle Management, connecting enterprise governance with the everyday practice of managing agents.</p><span className="development-note"><span />ALMOps · In development</span></div></div>
+    <div className="section-heading"><h2>Agents are coming and evolving.<br /><span className="muted-heading">Management capability should, too.</span></h2><div className="section-intro"><p>A methodology-led approach to Agent Lifecycle Management, connecting enterprise governance with the everyday practice of managing agents.</p><span className="development-note"><span />ALMOps · In development</span></div></div>
     <div className="lifecycle-layout">
       <div className="lifecycle-visual"><img src="/media/porcelain.webp" alt="Sculptural white surfaces surrounding a substantial cobalt glass core" loading="lazy" width="1440" height="810" />
         <div className="visual-caption"><span>Purpose. Context. Accountability.</span></div>
