@@ -79,7 +79,7 @@ function ALMOps() {
         <a href="#contact" className="text-link">Discuss your agent lifecycle</a>
       </div>
     </div>
-    <p className="method-note">A guide to lifecycle thinking. Platform scope and availability can be discussed with our team.</p>
+    <p className="method-note">A guide to lifecycle thinking. Discuss your enterprise requirements with our team.</p>
   </section>;
 }
 
@@ -131,7 +131,6 @@ function Research() {
           <p className="source-note">An editorial perspective based on DataEco Lab’s published company material. This is not presented as a peer-reviewed paper.</p>
           <details className="original-artwork"><summary>{article.imageCaption}<span aria-hidden="true">+</span></summary>
             {active === 1 && <p className="source-note">Conceptual illustration of people, data and technology sharing one enterprise environment.</p>}
-            {active === 0 && <p className="source-note">Archived concept artwork, not verified product evidence. Metrics, standards, vendor integrations and capabilities shown in this original diagram have not been independently verified and do not establish current availability.</p>}
             <a href={article.image} target="_blank" rel="noreferrer" aria-label="Open illustration at full size"><img src={article.image} alt={article.imageCaption} /></a><p className="image-hint">Select the image to open at full size.</p>
           </details></>}
       </div>

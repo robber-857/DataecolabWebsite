@@ -5,7 +5,7 @@ export const pageContent: Record<string, PageContent> = {
   '/vision': {
     image: 'architecture', lead: 'Agentic enterprise starts with a connected view of agents, people, data and technology.',
     chapters: [
-      { title: 'Enterprise Agent Lifecycle Management', text: 'Developing approaches for the responsible management of agents throughout their lifecycle, with an understanding of their enterprise context.', href: '/toolsplatforms', link: 'Explore ALMOps' },
+      { title: 'Enterprise Agent Lifecycle Management', text: 'Approaches to the responsible management of agents throughout their lifecycle, with an understanding of their enterprise context.', href: '/toolsplatforms', link: 'Explore ALMOps' },
       { title: 'An ecosystem perspective', text: 'Helping organisations understand and manage enterprise data practice as an evolving ecosystem, with capability and confidence.', href: '/#ecosystem', link: 'Explore the ecosystem perspective' },
       { title: 'From research to practice', text: 'Connecting methodological thinking with the practical questions facing enterprise teams.', href: '/services', link: 'Discover our services' },
     ],
@@ -21,23 +21,23 @@ export const pageContent: Record<string, PageContent> = {
     ],
   },
   '/toolsplatforms': {
-    image: 'glass', lead: 'Tools grounded in methods for understanding and managing the enterprise.', status: 'Emerging technologies · In development',
+    image: 'glass', lead: 'Tools grounded in methods for understanding and managing the enterprise.',
     chapters: [
-      { title: 'ALMOps', image: { src: '/images/original-platform-4.png', alt: 'Enterprise Agent Lifecycle Management platform concept overview', caption: 'ALMOps concept overview · In development. Metrics and integrations in this concept artwork are not verified product capabilities.' }, text: 'Agent Lifecycle Management Operating System: a methodology-based platform being developed to support enterprise agentic practice and the management of agent fleets across an enterprise ecosystem.', href: '/#almops', link: 'Explore the lifecycle approach' },
+      { title: 'ALMOps', image: { src: '/images/original-platform-4.png', alt: 'Enterprise Agent Lifecycle Management platform concept overview', caption: 'ALMOps concept overview' }, text: 'Agent Lifecycle Management Operating System: a methodology-based approach to enterprise agentic practice and the management of agent fleets across an enterprise ecosystem.', href: '/#almops', link: 'Explore the lifecycle approach' },
       { title: 'DPMOps / EDE-360', text: 'Data Practice Management Operating System: an interrelated suite of tools addressing enterprise data practice, architecture, knowledge management and change. EDE-360 provides an ecosystem perspective.', href: '/#ecosystem', link: 'Explore the ecosystem approach' },
-      { title: 'Discuss the scope with our team', text: 'For current development scope, availability and suitability for your organisation, please contact us.', href: '/contact-us', link: 'Talk to our team' },
+      { title: 'Discuss the scope with our team', text: 'Contact our team to discuss your organisation’s requirements and how ALMOps fits your enterprise context.', href: '/contact-us', link: 'Talk to our team' },
     ],
   },
   '/resources': {
-    image: 'glass', lead: 'A place for the ideas and methods behind our enterprise perspective.', status: 'Resource Centre · Under construction',
+    image: 'glass', lead: 'A place for the ideas and methods behind our enterprise perspective.',
     chapters: [
       { title: 'Research & perspectives', text: 'Read the editorial introductions to agentic practice and enterprise ecosystems on our homepage.', href: '/#research', link: 'Read our perspectives' },
       { title: 'Research perspectives', text: 'Explore the thinking behind our lifecycle and ecosystem approach. Supporting illustrations can be expanded in the homepage research details.', href: '/#research', link: 'Explore the research perspectives' },
-      { title: 'Looking for a specific resource?', text: 'Contact the team with your topic or research question. The wider resource collection is still being prepared.', href: '/contact-us', link: 'Ask our team' },
+      { title: 'Looking for a specific resource?', text: 'Contact the team with your topic or research question.', href: '/contact-us', link: 'Ask our team' },
     ],
   },
   '/working-with-us': {
-    image: 'architecture', lead: 'Explore a conversation around research, enterprise practice or shared learning.', status: 'Collaboration programme details · Coming soon',
+    image: 'architecture', lead: 'Explore a conversation around research, enterprise practice or shared learning.',
     chapters: [
       { title: 'Joining R&D Project', text: 'Discuss research interests and enquire about opportunities to work together.', href: '/working-with-us/joining-rd-project', link: 'Explore research collaboration' },
       { title: 'Partners & Clients', text: 'Bring an enterprise challenge or a partnership enquiry to our team.', href: '/working-with-us/partners-clients', link: 'Partnerships & enterprise enquiries' },
@@ -53,24 +53,24 @@ export const pageContent: Record<string, PageContent> = {
     ],
   },
   '/working-with-us/joining-rd-project': {
-    image: 'glass', lead: 'Share your research interests and the enterprise questions you would like to explore.', status: 'Project information · Under construction',
+    image: 'glass', lead: 'Share your research interests and the enterprise questions you would like to explore.',
     chapters: [
       { title: 'An enquiry starts the conversation', text: 'Tell us about your research area, organisation and interest in Agent Lifecycle Management or enterprise ecosystems.', href: 'mailto:info@dataecolab.com?subject=Research%20collaboration', link: 'Enquire about R&D collaboration' },
-      { title: 'Project details', text: 'Project descriptions, participation arrangements and application dates have not been published on this page. Please contact the team for current information.' },
+      { title: 'Project details', text: 'Contact our team to discuss research projects, participation arrangements and your interests.' },
     ],
   },
   '/working-with-us/partners-clients': {
-    image: 'porcelain', lead: 'Bring your enterprise context to a conversation with DataEco Lab.', status: 'Partners & Clients · Under construction',
+    image: 'porcelain', lead: 'Bring your enterprise context to a conversation with DataEco Lab.',
     chapters: [
       { title: 'Enterprise & partnership enquiries', text: 'Let us know what you are exploring, the challenges you face and how you would like to work together.', href: 'mailto:info@dataecolab.com?subject=Enterprise%20and%20partnership%20enquiry', link: 'Start a conversation' },
       { title: 'Explore our approach', text: 'Learn about the consulting and training areas that inform our enterprise work.', href: '/services', link: 'Explore services' },
     ],
   },
   '/working-with-us/workshops-forums': {
-    image: 'architecture', lead: 'Explore shared learning around agents, people, data and technology.', status: 'Workshops & Forums · Under construction',
+    image: 'architecture', lead: 'Explore shared learning around agents, people, data and technology.',
     chapters: [
       { title: 'Discuss your learning needs', text: 'Share your proposed topic, audience and questions with our team.', href: 'mailto:info@dataecolab.com?subject=Workshop%20or%20forum%20enquiry', link: 'Enquire about workshops & forums' },
-      { title: 'Programme information', text: 'Dates, speakers, venues and registration details have not been published on this page. Contact us for current information.' },
+      { title: 'Programme information', text: 'Contact our team to discuss workshop and forum topics, formats and participation.' },
     ],
   },
   '/contact-us': {

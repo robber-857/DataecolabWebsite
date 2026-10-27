@@ -20,7 +20,7 @@ export const articles = [
     paragraphs: [
       'A governance framework sets direction. Enterprise agentic practice asks how that direction becomes part of day-to-day decisions about agents.',
       'DataEco Lab’s services describe Agent Lifecycle Management as a way to bring data, IT and AI governance into earlier engagement with agent development and subsequent change.',
-      'Questions for the enterprise include who owns an agent, where its authority begins and ends, and when a change should trigger reassessment. The lifecycle presented here is an editorial introduction to those questions, not a claim of released platform functionality.',
+      'Questions for the enterprise include who owns an agent, where its authority begins and ends, and when a change should trigger reassessment. The lifecycle presented here is an editorial introduction to those questions.',
     ], source: 'https://www.dataecolab.com/services', image: '/images/original-platform-4.png', imageCaption: 'Original ALM concept illustration',
   },
   {
