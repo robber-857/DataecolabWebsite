@@ -2,12 +2,12 @@
   {"path":"/","label":"Home","title":"Intelligent agents. Managed with confidence.","description":"Research-led Agent Lifecycle Management, ALMOps and enterprise ecosystems.","main":true},
   {"path":"/vision","label":"Vision","title":"Building agentic enterprises with ALM capability.","description":"Our vision for Agent Lifecycle Management and enterprise ecosystems.","main":true},
   {"path":"/services","label":"Services","title":"From understanding to enterprise practice.","description":"Consulting and training in agent lifecycles, enterprise ecosystems, governance and change.","main":true},
-  {"path":"/toolsplatforms","label":"Tools/Platforms","title":"Operational capability for enterprise Agentic Lifecycle Management.","description":"Explore DataEco Lab’s ALMOps and DPMOps / EDE-360 approaches to agent lifecycle and enterprise ecosystem management.","main":true},
+  {"path":"/toolsplatforms","label":"Tools/Platforms","title":"Operational capability for enterprise Agent Lifecycle Management.","description":"Explore DataEco Lab’s ALMOps and DPMOps / EDE-360 approaches to agent lifecycle and enterprise ecosystem management.","main":true},
   {"path":"/resources","label":"Resources","title":"Research. Methods. Shared understanding.","description":"Resource Centre: research perspectives and original company materials.","main":true},
   {"path":"/working-with-us","label":"Working with us","title":"Bring your perspective. Explore what’s next.","description":"Research collaboration, partners and clients, workshops and forums.","main":true},
   {"path":"/about-us","label":"About us","title":"Research-led. Enterprise-minded.","description":"About DataEco Lab Pty Ltd, an Australian research and development company.","main":true},
-  {"path":"/working-with-us/joining-rd-project","label":"Joining R&D Project","title":"Explore a research collaboration.","description":"Enquire about joining DataEco Lab research and development projects.","parent":"/working-with-us"},
+  {"path":"/working-with-us/joining-rd-project","label":"Join an R&D Project","title":"Explore a research collaboration.","description":"Enquire about joining DataEco Lab research and development projects.","parent":"/working-with-us"},
   {"path":"/working-with-us/partners-clients","label":"Partners & Clients","title":"Start with a shared challenge.","description":"Partnership and enterprise enquiries at DataEco Lab.","parent":"/working-with-us"},
   {"path":"/working-with-us/workshops-forums","label":"Workshops & Forums","title":"Make room for a deeper conversation.","description":"Enquire about workshops and forums on agents and enterprise ecosystems.","parent":"/working-with-us"},
-  {"path":"/contact-us","label":"Contact us","title":"Let’s start a conversation.","description":"Contact DataEco Lab at info@dataecolab.com in Macquarie University, NSW, Australia."}
+  {"path":"/contact-us","label":"Contact us","title":"Let’s start a conversation.","description":"Contact DataEco Lab at info@dataecolab.com. We are based at Macquarie University, NSW, Australia."}
 ]

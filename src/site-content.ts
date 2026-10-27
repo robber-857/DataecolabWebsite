@@ -3,7 +3,7 @@ type PageContent = { image: string; lead: string; status?: string; chapters: Cha
 
 export const pageContent: Record<string, PageContent> = {
   '/vision': {
-    image: 'architecture', lead: 'Agentic enterprise starts with a connected view of agents, people, data and technology.',
+    image: 'architecture', lead: 'Building an agentic enterprise starts with a connected view of agents, people, data and technology.',
     chapters: [
       { title: 'Enterprise Agent Lifecycle Management', text: 'Approaches to the responsible management of agents throughout their lifecycle, with an understanding of their enterprise context.', href: '/toolsplatforms', link: 'Explore ALMOps' },
       { title: 'An ecosystem perspective', text: 'Helping organisations understand and manage enterprise data practice as an evolving ecosystem, with capability and confidence.', href: '/#ecosystem', link: 'Explore the ecosystem perspective' },
@@ -13,7 +13,7 @@ export const pageContent: Record<string, PageContent> = {
   '/services': {
     image: 'porcelain', lead: 'Consulting and training informed by an ecosystem-based agent lifecycle management approach.',
     chapters: [
-      { title: 'Agent lifecycle & governance practice', text: 'Examine how data, IT and AI governance engage with agent development, authorisation and change. Discuss the organisational practice surrounding your agents.', href: '/#almops', link: 'Explore the lifecycle' },
+      { title: 'Agent lifecycle & governance practice', text: 'Examine how data, IT and AI governance inform agent development, authorisation and change. Discuss the organisational practice surrounding your agents.', href: '/#almops', link: 'Explore the lifecycle' },
       { title: 'Enterprise ecosystem management', text: 'Use modelling to understand enterprise data practice, its complexity and the relationships between people, data and technology.' },
       { title: 'Assessment & transformation planning', text: 'Examine maturity, context and the implications of change to inform enterprise planning and transformation decisions.' },
       { title: 'Architecture & knowledge management', text: 'Consider consolidated data architecture and the knowledge needed to understand and manage the enterprise ecosystem.' },
@@ -37,9 +37,9 @@ export const pageContent: Record<string, PageContent> = {
     ],
   },
   '/working-with-us': {
-    image: 'architecture', lead: 'Explore a conversation around research, enterprise practice or shared learning.',
+    image: 'architecture', lead: 'Start a conversation about research, enterprise practice or shared learning.',
     chapters: [
-      { title: 'Joining R&D Project', text: 'Discuss research interests and enquire about opportunities to work together.', href: '/working-with-us/joining-rd-project', link: 'Explore research collaboration' },
+      { title: 'Join an R&D Project', text: 'Discuss research interests and enquire about opportunities to work together.', href: '/working-with-us/joining-rd-project', link: 'Explore research collaboration' },
       { title: 'Partners & Clients', text: 'Bring an enterprise challenge or a partnership enquiry to our team.', href: '/working-with-us/partners-clients', link: 'Partnerships & enterprise enquiries' },
       { title: 'Workshops & Forums', text: 'Start a conversation about learning and discussion around enterprise ecosystems and agents.', href: '/working-with-us/workshops-forums', link: 'Explore workshops & forums' },
     ],
